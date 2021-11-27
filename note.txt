@@ -1,0 +1,8 @@
+CREATING A BACKEND SERVER WITH NODE JS & EXPRESS JS
+HTTP METHODS {GET(TO READ), POST (TO CREATE), PUT/PATCH (TO UPDATE), DELETE (TO DELETE) = ABBREVIATED AS CRUD}
+//Create a server with Express Js
+//Create routes as API endpoints to the server using  HTTP methods/verbs
+//Connect to a database to store, retrieve and modify data
+//Deploy our API to the internet
+//Secure our API with authentication & authoriztion
+//Connect our client apps to the API to fectch, store and modify resources
