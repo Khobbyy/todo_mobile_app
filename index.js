@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 //use this port for our server
-const PORT = process.env.PORT ?? 5000;
+const PORT = process.env.PORT?? 5000;
 
 //create a route to handle GET request on the index route
 
