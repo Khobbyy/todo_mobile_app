@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 //use this port for our server
-const port = process.env.port ?? 5000;
+const PORT = process.env.PORT ?? 5000;
 
 //create a route to handle GET request on the index route
 
@@ -57,8 +57,8 @@ mongoose.connect(process.env.MONGO_DB_CONSTRING, (error) => {
     else {
         return console.log("Connetion to Mongoose was successful");
     }
-    app.listen(port, () =>
-    console.log(`server is up and running on: ${port}`))
+    app.listen(PORT, () =>
+    console.log(`server is up and running on: ${PORT}`))
 //listen to incoming request on this port
 
 })
