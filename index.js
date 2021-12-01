@@ -1,20 +1,25 @@
 //import the express package
+import express from "express";
 
-import express, { request, response } from "express";
+//import the mongoose package
+import mongoose from "mongoose";
 
+//import the dotenv file 
+import dotenv from "dotenv";
+
+//comfigure dotenv
+dotenv.config();
 
 //create an instance of express
 const app = express();
 
 //use the express.json middleware
 //to extract the body of the request
-
 app.use(express.json());
 
 
 //use this port for our server
-
-const port = 5000;
+const port = process.env.port ?? 5000;
 
 //create a route to handle GET request on the index route
 
@@ -44,10 +49,18 @@ app.get("/todos", (req, res) => {
         }
     ])
 })
-
-
+//connecting mongoosedb
+mongoose.connect(process.env.MONGO_DB_CONSTRING, (error) => {
+    if (error) {
+        return console.log("Couldn't connect to Mongoose");
+    }
+    else {
+        return console.log("Connetion to Mongoose was successful");
+    }
+    app.listen(port, () =>
+    console.log(`server is up and running on: ${port}`))
 //listen to incoming request on this port
-app.listen(port, () =>
-    console.log(`server is up and running on: ${port}`)
-);
+
+})
+
 
