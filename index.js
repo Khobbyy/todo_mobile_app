@@ -15,7 +15,7 @@ const app = express();
 
 //use the express.json middleware
 //to extract the body of the request
-app.use(express.json());
+//app.use(express.json());
 
 
 //use this port for our server
@@ -28,16 +28,18 @@ app.get("/", (request, response) => {
 })
 
 //create a an array variable that 
-let todos = [];
+//let todos = [];
 
-
+/*
 app.post('/todo', (req, res) => {
     let data = req.body;
-    todos.push(data);
+    //todos.push(data);
     res.json(todos);
 })
+*/
 
 
+/*
 app.get("/todos", (req, res) => {
     res.json([
         {
@@ -49,6 +51,9 @@ app.get("/todos", (req, res) => {
         }
     ])
 })
+*/
+
+
 //connecting mongoosedb
 mongoose.connect(process.env.MONGO_DB_CONSTRING, (error) => {
     if (error) {
@@ -57,10 +62,10 @@ mongoose.connect(process.env.MONGO_DB_CONSTRING, (error) => {
     else {
         return console.log("Connetion to Mongoose was successful");
     }
-    app.listen(PORT, () =>
-    console.log(`server is up and running on: ${PORT}`))
+
+});
+
+
+app.listen(PORT, () =>
+console.log(`server is up and running on: ${PORT}`));
 //listen to incoming request on this port
-
-})
-
-
